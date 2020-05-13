@@ -12,6 +12,4 @@ class House
   def add_room(room_param)
     @rooms << room_param
   end
-
-
 end

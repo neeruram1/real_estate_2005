@@ -31,5 +31,4 @@ def test_it_has_rooms
   house.add_room (room_2)
   assert_equal [room_1, room_2], house.rooms
 end
-
 end
