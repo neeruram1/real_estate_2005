@@ -9,6 +9,7 @@ class House
     @address = address
     @rooms = []
     @details = {"price" => @price, "address" => @address}
+    @house_area = 0
   end
 
   def add_room(room_param)
@@ -26,8 +27,19 @@ class House
   end
 
   def area
-    @rooms.sum do |room|
+    @house_area = @rooms.sum do |room|
       room.area
     end
   end
+
+  def price_per_square_foot
+    price_per_square_foot = @price.to_f / @house_area.to_f
+    price_per_square_foot.to_f.round(2)
+  end
+
+  def rooms_sorted_by_area
+    @rooms.reverse! do |room|
+      room.area
+    end
+end
 end
